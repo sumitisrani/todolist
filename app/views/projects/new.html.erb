@@ -1,0 +1,25 @@
+<h2>new Project</h2>
+<% @project.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+ <% end %>
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<%= form_for @project,url:{action:"create"}  do |f| %>
+  <div><%= f.label :title %><br />
+  <%= f.text_field :title %></div>
+
+  <div><%= f.label :startdate %><br />
+  <%= f.text_field :start_date %></div>
+
+  <div><%= f.label :enddate %><br />
+  <%= f.text_field :end_date %></div>
+
+  <div><%= f.label :status %><br />
+  <%= f.text_field :status %></div>
+
+  <div><%= f.label :description %><br />
+  <%= f.text_area :description %></div>
+
+  <div><%= f.submit "create project" %></div>
+ 
+<% end %>
+

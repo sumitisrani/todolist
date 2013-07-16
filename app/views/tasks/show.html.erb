@@ -1,0 +1,48 @@
+
+<h2>Show Task</h2>
+ 
+<table border=1>
+  <tr>
+    
+    <th>id</th>
+    <th>Title</th>     
+    <th>description</th>
+    <th>start_date</th>
+    <th>end_date</th>
+    <th>status</th>
+    <th>edit</th>
+    <th>delete</th>
+    <th>task</th>
+    <th>assign</th>
+  </tr>
+ 
+<tr>
+    <td><%= @task.id %></td>
+    <td><%= @task.title %></td>
+    <td><%= @task.description %></td>
+    <td><%= @task.start_date %></td>
+    <td><%= @task.end_date %></td>
+    <td><%= @task.status %></td>
+    <td><%= link_to 'edit task' %></td>
+    <td><%= link_to 'delete task' %></td>
+    
+    <td><%= link_to 'create comment',new_comment_path(:task_id => @task.id,:project_id => @project_id ) %>
+  </tr>
+</table><br><br><br><br>
+
+
+<table border=1>
+
+  <tr>
+    <th>comments</th>
+    <th>commentby</th>     
+  </tr>  
+  <% @comment.each do |comment| %>
+    <tr>
+      <td><%=comment.message%></td>
+      <td><%=User.where(:id => comment.user_id).first.name %></td> 
+    </tr> 
+  <% end %> 
+
+</table>
+

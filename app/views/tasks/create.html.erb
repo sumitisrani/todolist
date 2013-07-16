@@ -1,0 +1,5 @@
+<% @task.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+  <% end %>
+  
+ <%=link_to "assign task again",new_project_task_path(@task.project_id)%> 

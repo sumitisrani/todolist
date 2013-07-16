@@ -1,0 +1,10 @@
+<h3>new comment</h3>
+<%= form_for @comment,url:{action:"create"}  do |t| %>
+
+  <div><%= t.label :comment %><br/>
+  <%= t.text_area :message %></div>
+  <%= t.hidden_field :task_id, :value => @task_id %>
+  <%= t.hidden_field :user_id, :value => current_user.id %>
+  <div><%= t.submit "create task" %></div>
+
+<% end %>

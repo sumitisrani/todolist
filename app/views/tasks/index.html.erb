@@ -1,0 +1,17 @@
+<h1>Task list</h1>
+ 
+<table border=1>
+  <tr>
+    <th>Title</th>
+    <th>id</th>
+  </tr>
+ 
+<% @task.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.id %></td>
+    <td><%= task.project_id%></td>
+    <td><%= link_to 'Go To task', project_task_path(task.project_id,task.id) %></td>
+  </tr>
+<% end %>
+</table>

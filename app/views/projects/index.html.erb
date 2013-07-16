@@ -1,0 +1,20 @@
+layout "home"
+<h1>Project list</h1>
+ 
+<table border=1>
+  <tr>
+    <th>Title</th>
+    <th>id</th>
+    <th>project</th>
+    <th>Task</th>  
+  </tr>
+ 
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.title %></td>
+    <td><%= project.id %></td>
+    <td><%= link_to 'Go To Project', project_path(project.id) %></td>
+    <td><%= link_to 'show tasks',project_tasks_path(project.id)%></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,21 @@
+<h3>edit form</h3>
+
+<%= form_for @project,url:{action:"update"}  do |f| %>
+  <div><%= f.label :title %><br />
+  <%= f.text_field :title, :value => @project.title %></div>
+
+  <div><%= f.label :startdate %><br />
+  <%= f.text_field :start_date, :value => @project.start_date %></div>
+
+  <div><%= f.label :enddate %><br />
+  <%= f.text_field :end_date, :value => @project.end_date %></div>
+
+  <div><%= f.label :status %><br />
+  <%= f.text_field :status, :value => @project.status %></div>
+
+  <div><%= f.label :description %><br />
+  <%= f.text_area :description, :value => @project.description %></div>
+
+  <div><%= f.submit "update project" %></div>
+ 
+<% end %>
