@@ -14,6 +14,11 @@
 
 .table-striped tbody > tr:nth-child(2n+1) > th{
 background-color:#0044CC !important;
+color: "white" !important ;
 } 
+.changetextcolor
+{
+color: "white" !important ;
+}
  
 
