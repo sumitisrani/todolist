@@ -1,20 +1,6 @@
-<%=@email%>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-
-<%= link_to('add project', new_project_path)  %>  <br>
+<%= render "home/home" %>
 
 
 
-<%=link_to('show projects',projects_path)%><br>
-
-<%=link_to('show tasks',projects_path)%><br>
 
 

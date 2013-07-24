@@ -3,7 +3,7 @@
 
   <div><%= t.label :comment %><br/>
   <%= t.text_area :message %></div>
-  <%= t.hidden_field :task_id, :value => @task_id %>
+  <%= t.hidden_field :task_id, :value => params[:task_id] %>
   <%= t.hidden_field :user_id, :value => current_user.id %>
   <div><%= t.submit "create task" %></div>
 

@@ -1,0 +1,5 @@
+<%= render "home/home" %>
+<%= form_for @task,url:{action:"update"}  do |t| %>
+<%=render partial: "new", :locals => {:t => t }%>
+<div><%= t.submit "update task" %></div>
+<% end %>

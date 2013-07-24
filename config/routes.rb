@@ -3,7 +3,7 @@ ToDop::Application.routes.draw do
   devise_for :users
   
   resources :comments
- 
+  resources :endusers
   resources :projects do
     
     resources:tasks

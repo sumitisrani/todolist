@@ -1,23 +1,8 @@
-  
+ <%= render "home/home" %> 
   <%= form_for @task,url:{action:"create"}  do |t| %>
-  project:<%= t.select(:project_id,options_from_collection_for_select(Project.where(:id=>@project_id), :id, :title)) %><br>
-  User  : <%= t.select(:user_id, options_from_collection_for_select(User.where(:id => UserProjectAssignment.select(:user_id).where(:project_id=>@project_id)),:id,:name))%>
-   
-  <div><%= t.label :title %><br/>
-  <%= t.text_field :title %></div>
-
-  <div><%= t.label :startdate %><br/>
-  <%= t.text_field :start_date %></div>
-
-  <div><%= t.label :enddate %><br/>
-  <%= t.text_field :end_date %></div>
-
-  <div><%= t.label :status %><br/>
-  <%= t.text_field :status %></div>
-
-  <div><%= t.label :description %><br/>
-  <%= t.text_area :description %></div>
-
+  
+  <%=render partial: "new", :locals => {:t => t }%>
+ 
   <div><%= t.submit "create task" %></div>
   
   <% end %>

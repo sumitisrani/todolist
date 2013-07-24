@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     
     validates :name, :presence => true ,length: { in: 6..20 }
     
-    validates :phone, :presence => true ,:length=>{:is=>10} ,:uniqueness=>true , numericality: { only_integer: true }
+    validates :phone, :presence => true ,:length=>{:is=>10}  , numericality: { only_integer: true }
     validates :gender ,:presence=>true       
   
   has_many:tasks

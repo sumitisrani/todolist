@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708113208) do
+ActiveRecord::Schema.define(:version => 20130717102518) do
 
   create_table "comments", :force => true do |t|
     t.integer  "task_id"
@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(:version => 20130708113208) do
   create_table "user_project_assignments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
-    t.string   "role"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "role",       :default => "admin"
   end
 
   create_table "users", :force => true do |t|

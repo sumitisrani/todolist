@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+.table-striped tbody > tr:nth-child(2n+1) > th{
+background-color:#0044CC !important;
+} 
+ 
+

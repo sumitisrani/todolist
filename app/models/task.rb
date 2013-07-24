@@ -11,9 +11,9 @@ class Task < ActiveRecord::Base
      
   
    
-  belongs_to:user , dependent: :destroy 
-  belongs_to:project ,dependent: :destroy
-  has_many:comments
+  belongs_to :user 
+  belongs_to :project 
+  has_many :comments, :dependent => :destroy 
   
 
    def a_method_used_for_validation_purposes

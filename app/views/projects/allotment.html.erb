@@ -1,7 +1,9 @@
+<%= render "home/home" %>
 <h2> allotment </h2>
-<%= form_tag(assign_project_path(@project_id),:method => "get")  do%>
-Name:<%= select_tag(:name,options_from_collection_for_select(User.where('id not in (?)',@upa), :id, :name)) %><br>
-Role:   <%= select_tag(:role, options_from_collection_for_select(Role.all,:id,:name))%><br><br><br><br>
-<%=submit_tag"assign project"%>
+
+<%= form_tag(assign_project_path(params[:id]),:method => "get")  do%>
+  Name:<%= select_tag(:user_id,options_from_collection_for_select(@user_detail, :id, :name)) %><br>
+  Role:   <%= select_tag(:role, options_from_collection_for_select(Role.all,:name,:name))%><br><br><br><br>
+  <%=submit_tag"assign project"%>
 
 <%end%>

@@ -1,8 +1,8 @@
-
+<%= render "home/home" %>
 
 <h2>Show Project</h2>
  
-<table border=1>
+<table class = "table">
   <tr>
     
     <th>id</th>
@@ -15,7 +15,6 @@
     <th>delete</th>
     <th>task</th>
     <th>assign</th>
-    <th>total tasks</th>
   </tr>
  
 
@@ -26,11 +25,21 @@
     <td><%= @project.start_date %></td>
     <td><%= @project.end_date %></td>
     <td><%= @project.status %></td>
-    <td><%= link_to 'edit project',edit_project_path(@project.id)  %></td>
-    <td><%= link_to 'delete project', project_path(@project.id), method: :delete ,confirm: :"are you sure" %></td>
-    <td><%= link_to 'create task', new_project_task_path(@project_id) %></td>
-    <td><%= link_to 'assign user',allotment_project_path(@project_id) %></td>
-   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
+    <td><%= link_to 'edit project',edit_project_path(@project.id),:class => "btn "  %></td>
+    <td><%= link_to 'delete project', project_path(@project.id), method: :delete ,confirm: :"are you sure" ,:class => 'btn btn-danger'%></td>
+    <td><%= link_to 'create task', new_project_task_path(@project.id),:class => 'btn btn-primary' %></td>
+    <td><%= link_to 'assign user',allotment_project_path(@project.id),:class => 'btn btn-primary' %></td>
   </tr>
 
 </table>
+
+<table class="table">
+  <tr>
+    <th>assigned users</th>  
+  </tr>  
+  <% @project.users.each do |user_detail| %>
+  <tr>
+    <td><%= user_detail.name %></td>
+  </tr>
+  <%end%>
+</table>  

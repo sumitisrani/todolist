@@ -1,4 +1,4 @@
-
+<%= render "home/home" %>
 <h2>Show Task</h2>
  
 <table border=1>
@@ -13,7 +13,6 @@
     <th>edit</th>
     <th>delete</th>
     <th>task</th>
-    <th>assign</th>
   </tr>
  
 <tr>
@@ -23,10 +22,10 @@
     <td><%= @task.start_date %></td>
     <td><%= @task.end_date %></td>
     <td><%= @task.status %></td>
-    <td><%= link_to 'edit task' %></td>
-    <td><%= link_to 'delete task' %></td>
+    <td><%= link_to 'edit task',edit_project_task_path(@task.project_id,@task.id) %></td>
+    <td><%= link_to 'delete task', project_task_path(@task.project_id,@task.id), method: :delete ,confirm: :"are you sure"  %></td>
     
-    <td><%= link_to 'create comment',new_comment_path(:task_id => @task.id,:project_id => @project_id ) %>
+    <td><%= link_to 'create comment',new_comment_path(:task_id => @task.id,:project_id => @task.project_id ) %>
   </tr>
 </table><br><br><br><br>
 

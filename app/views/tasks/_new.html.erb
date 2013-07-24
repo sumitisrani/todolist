@@ -1,0 +1,17 @@
+project:<%= t.select(:project_id,options_from_collection_for_select(Project.where(:id => params[:project_id]), :id, :title)) %><br>
+  User  : <%= t.select(:user_id, options_from_collection_for_select(User.where(:id => UserProjectAssignment.select(:user_id).where(:project_id => params[:project_id])),:id,:name))%>
+   
+ <div><%= t.label :title %><br/>
+  <%= t.text_field :title, :value => @task.title %></div>
+
+  <div><%= t.label :startdate %><br/>
+  <%=date_select("task", "start_date", :order => [:day, :month, :year])%></div></div>
+
+  <div><%= t.label :enddate %><br/>
+  <%=date_select("task", "end_date", :order => [:day, :month, :year])%></div></div>
+
+  <div><%= t.label :status %><br/>
+  <%= t.text_field :status, :value => @task.status %></div>
+
+  <div><%= t.label :description %><br/>
+  <%= t.text_area :description, :cols => "40", :rows => "10", :value => @task.description %></div>
